@@ -22,6 +22,12 @@ public class UserController {
     @Autowired
     private HttpSession session;
 
+    @GetMapping("/logout")
+    public String logout() {
+        session.invalidate();
+        return "redirect:/";
+    }
+
     @GetMapping("/loginForm")
     public String loginForm() {
         return "user/loginForm";

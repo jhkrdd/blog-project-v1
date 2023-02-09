@@ -7,7 +7,7 @@
     <c:if test="${brbyid.userId == principal.id}">
         <div class="mb-3">
             <a href="/board/${brbyid.id}/updateForm" class="btn btn-warning">수정</a>
-            <button onclick="deleteById()" class="btn btn-danger">삭제</button>
+            <button onclick="deleteById(${brbyid.id})" class="btn btn-danger">삭제</button>
         </div>
     </c:if>
 
@@ -55,5 +55,19 @@
         </ul>
     </div>
 </div>
-
+<script>
+    function deleteById(id) {
+        
+        $.ajax({
+            type:"delete",
+            url:"/board/"+id,
+            dataType: "json"
+        }).done((res) => {
+            alert(res.msg);
+            location.href="/";
+        }).fail((err)=>{
+            alert(err.responseJSON.msg);
+        });
+    }
+</script>
 <%@ include file="../layout/footer.jsp"%>

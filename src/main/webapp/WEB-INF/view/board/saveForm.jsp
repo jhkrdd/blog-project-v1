@@ -4,11 +4,11 @@
 <div class="container my-3">
     <form class="mb-1">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Enter title" id="text">
+            <input type="text" class="form-control" placeholder="Enter title" id="title">
         </div>
 
         <div class="form-group">
-            <textarea class="form-control summernote" rows="5" id="title"></textarea>
+            <textarea class="form-control summernote" rows="5" id="content"></textarea>
         </div>
         <button onclick="save()" type="button" class="btn btn-primary">글쓰기완료</button>
     </form>
@@ -17,9 +17,9 @@
 <script>
     function save() {
         let data = {
-            "title" : $("#title").val();
-            "content" : $("#content").val();
-        }
+            "title" : $("#title").val(),
+            "content" : $("#content").val()
+        };
         $.ajax({
             type:"post",
             url:"/board",

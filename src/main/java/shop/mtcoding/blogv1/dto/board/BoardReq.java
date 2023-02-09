@@ -6,14 +6,14 @@ import lombok.Setter;
 public class BoardReq {
     @Getter
     @Setter
-    public class BoardSaveDto {
+    public static class BoardSaveDto {
         private String title;
         private String content;
     }
 
     @Getter
     @Setter
-    public class BoardUpdateDto {
+    public static class BoardUpdateDto {
         private String title;
         private String content;
     }

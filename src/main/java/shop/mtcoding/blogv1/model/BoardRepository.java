@@ -11,20 +11,21 @@ import shop.mtcoding.blogv1.dto.board.BoardResp.BoardMainRespDto;
 @Mapper
 public interface BoardRepository {
 
-    public BoardDetailRespDto findByIdWithUser(int id);
+        public BoardDetailRespDto findByIdWithUser(int id);
 
-    public List<BoardMainRespDto> findAllWithUser();
+        public List<BoardMainRespDto> findAllWithUser();
 
-    public List<Board> findAll();
+        public List<Board> findAll();
 
-    public Board findById(int id);
+        public Board findById(int id);
 
-    public int insert(@Param("title") String title, @Param("content") String content,
-            @Param("thumbnail") String thumbnail,
-            @Param("userId") int userId);
+        public int insert(@Param("title") String title, @Param("content") String content,
+                        @Param("thumbnail") String thumbnail,
+                        @Param("userId") int userId);
 
-    public int updateById(@Param("id") int id, @Param("title") String title,
-            @Param("content") String content);
+        public int updateById(@Param("id") int id, @Param("title") String title,
+                        @Param("content") String content, @Param("thumbnail") String thumbnail);
 
-    public int deleteById(int id);
+        public int deleteById(int id);
+
 }
