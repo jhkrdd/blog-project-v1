@@ -51,7 +51,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void login_test1() throws Exception {
+    public void login_test() throws Exception {
         // Test1. 로그인 작동 여부, 세션 검증
         // given
         String requestBody = "username=ssar&password=1234";
